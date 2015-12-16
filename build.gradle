@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'jetty'
+apply plugin: 'jacoco'
+
+group = 'org.mybatis'
+version = '6.0.2-SNAPSHOT'
+
+description = 'JPetStore Demo 6'
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+repositories {
+     mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.mybatis', name: 'mybatis', version:'3.3.0'
+    compile group: 'org.mybatis', name: 'mybatis-spring', version:'1.2.3'
+    compile group: 'org.springframework', name: 'spring-jdbc', version:'4.2.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version:'4.2.3.RELEASE'
+    compile group: 'net.sourceforge.stripes', name: 'stripes', version:'1.6.0'
+    compile group: 'javax.servlet', name: 'jstl', version:'1.2'
+    compile group: 'log4j', name: 'log4j', version:'1.2.17'
+    compile group: 'org.hsqldb', name: 'hsqldb', version:'2.3.3'
+    providedCompile group: 'javax.servlet', name: 'jsp-api', version:'2.0'
+}
+
+build.dependsOn jacocoTestReport
