@@ -18,25 +18,4 @@ public class AccountService {
     return accountMapper.getAccountByUsername(username);
   }
 
-  public Account getAccount(String username, String password) {
-    return accountMapper.getAccountByUsernameAndPassword(username, password);
-  }
-
-  @Transactional
-  public void insertAccount(Account account) {
-    accountMapper.insertAccount(account);
-    accountMapper.insertProfile(account);
-    accountMapper.insertSignon(account);
-  }
-
-  @Transactional
-  public void updateAccount(Account account) {
-    accountMapper.updateAccount(account);
-    accountMapper.updateProfile(account);
-
-    if (account.getPassword() != null && account.getPassword().length() > 0) {
-      accountMapper.updateSignon(account);
-    }
-  }
-
 }
