@@ -19,7 +19,7 @@
           ACCOUNT.COUNTRY,
           ACCOUNT.PHONE
     FROM ACCOUNT
-    WHERE ACCOUNT.USERID = #{username}
+    WHERE ACCOUNT.USERID = #{userName}
   </select>
 
 
