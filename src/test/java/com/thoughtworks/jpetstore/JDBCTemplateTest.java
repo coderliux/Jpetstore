@@ -15,5 +15,4 @@ public class JDBCTemplateTest {
         System.out.println("account email= [" + account.getEmail() + "]");
     }
 
-
 }

@@ -26,6 +26,8 @@ public class JDBCTest {
         Class.forName(JDBC_DRIVER);
         //STEP 2: 建立连接
         conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        conn.setAutoCommit(false);
+
         //STEP 3:创建Statment
         stmt = conn.createStatement();
         //STEP 4:执行操作
@@ -52,6 +54,15 @@ public class JDBCTest {
             System.out.println("account userName = [" + account.getUserName() + "]");
         }
 
+        String delete ="delete from student";
+        String insertSql1= "insert into student values(1,'liujie')";
+        String insertSql2 ="insert into student values(2,'test')";
+
+        //stmt.executeUpdate(delete);
+        stmt.executeUpdate(insertSql1);
+        stmt.executeUpdate(insertSql2);
+
+        conn.commit();
         //STEP 5: 关闭资源
         try {
             if (stmt != null)

@@ -35,8 +35,8 @@ repositories {
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.powermock:powermock-mockito-release-full:1.4.12'
+    compile 'junit:junit:4.12'
+    compile 'org.powermock:powermock-mockito-release-full:1.4.12'
 
     compile 'org.mybatis:mybatis:3.3.0'
     compile 'org.mybatis:mybatis-spring:1.2.3'

@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,6 +25,7 @@ public class AccountService {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    @Transactional
     public Account queryAccount(String userName) {
         String sql = "SELECT\n" +
                 "          ACCOUNT.USERID USERNAME,\n" +
